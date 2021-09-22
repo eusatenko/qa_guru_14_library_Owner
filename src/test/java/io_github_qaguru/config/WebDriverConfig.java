@@ -6,9 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public interface WebDriverConfig extends Config{
 
     @Config.Key("browser")
-    String getBrowser();
+    @DefaultValue("CHROME")
+    Browser getBrowser();
 
     @Config.Key("baseUrl")
+    @DefaultValue("https://github.com")
     String getBaseURL();
 
 }

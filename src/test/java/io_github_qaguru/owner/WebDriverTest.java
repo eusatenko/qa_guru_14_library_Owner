@@ -13,6 +13,7 @@ public class WebDriverTest {
     private  WebDriver driver = new WebDriverProvider().createDriver();
 
     @Test
+    //открыть страницу и проверить TITLE
     public void testOpenGitHubPage() {
 
         assertEquals(TITLE, driver.getTitle());
@@ -20,5 +21,5 @@ public class WebDriverTest {
         }
 }
 // Для запуска тестов в терминале с параметром browser и url
-// ./gradlew clean test -Dbrowser=firefox -DbaseUrl=https://github.com
-// ./gradlew clean test -Dbrowser=chrome -DbaseUrl=https://github.com
+// ./gradlew clean test -Dbrowser=FIREFOX -DbaseUrl=https://github.com
+// ./gradlew clean test -Dbrowser=CHROME -DbaseUrl=https://github.com

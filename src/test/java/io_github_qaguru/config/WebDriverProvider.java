@@ -22,12 +22,14 @@ public class WebDriverProvider {
 
     private WebDriver getDriver() {
         //для указания в каком браузере запускать тест
-        final String browser = config.getBrowser();
-        if ("chrome".equals(browser)) {
-            return new ChromeDriver();
-        }
-        if ("firefox".equals(browser)) {
-            return new FirefoxDriver();
+        final Browser browser = config.getBrowser();
+        switch (browser) {
+            case FIREFOX: {
+                return new FirefoxDriver();
+            }
+            case CHROME: {
+                return new ChromeDriver();
+            }
         }
         throw new RuntimeException("No such browder: " + browser);
     }
