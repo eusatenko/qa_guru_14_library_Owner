@@ -3,6 +3,7 @@ package io.github.qaguru.owner;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +14,7 @@ public class WebDriverTest {
 
     @Test
     public void testOpenGitHubPage() {
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new FirefoxDriver();
         driver.get(BASE_URL);
         assertEquals(TITLE, driver.getTitle());
         driver.quit();
