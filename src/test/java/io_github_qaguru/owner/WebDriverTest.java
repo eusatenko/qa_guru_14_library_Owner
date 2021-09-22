@@ -20,3 +20,6 @@ public class WebDriverTest {
         driver.quit();
         }
 }
+// Для запуска тестов в терминале с параметром browser
+// ./gradlew clean test -Dbrowser=firefox
+// ./gradlew clean test -Dbrowser=chrome

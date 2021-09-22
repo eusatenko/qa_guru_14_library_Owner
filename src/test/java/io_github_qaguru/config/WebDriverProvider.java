@@ -8,7 +8,13 @@ public class WebDriverProvider {
 
     public WebDriver get() {
         //для указания в каком браузере запускать тест
-        return new ChromeDriver();
-        //return new FirefoxDriver();
+        final String browser = System.getProperty("browser");
+        if ("chrome".equals(browser)) {
+            return new ChromeDriver();
+        }
+        if ("firefox".equals(browser)) {
+            return new FirefoxDriver();
+        }
+        throw new RuntimeException("No such browder: " + browser);
     }
 }
