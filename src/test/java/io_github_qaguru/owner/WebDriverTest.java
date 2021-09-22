@@ -8,18 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebDriverTest {
 
-    private final static String BASE_URL = "https://github.com";
     private final static String TITLE = "GitHub: Where the world builds software · GitHub";
 
-    private  WebDriver driver = new WebDriverProvider().get();
+    private  WebDriver driver = new WebDriverProvider().createDriver();
 
     @Test
     public void testOpenGitHubPage() {
-        driver.get(BASE_URL);
+
         assertEquals(TITLE, driver.getTitle());
         driver.quit();
         }
 }
-// Для запуска тестов в терминале с параметром browser
-// ./gradlew clean test -Dbrowser=firefox
-// ./gradlew clean test -Dbrowser=chrome
+// Для запуска тестов в терминале с параметром browser и url
+// ./gradlew clean test -Dbrowser=firefox -DbaseUrl=https://github.com
+// ./gradlew clean test -Dbrowser=chrome -DbaseUrl=https://github.com
